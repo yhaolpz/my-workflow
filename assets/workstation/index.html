@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>我的工作流 · AI短剧工作台</title>
+  <meta name="color-scheme" content="light">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#projects"><span class="brand-mark">W<span>↗</span></span><span>我的工作流<small>AI 短剧工作台</small></span></a>
+    <div class="rail-label">创作空间</div>
+    <nav aria-label="主导航">
+      <a href="#projects" data-nav="projects"><span>▦</span>剧目库</a>
+      <a href="#prompts" data-nav="prompts"><span>⌘</span>阶段提示词</a>
+      <a href="#rules" data-nav="rules"><span>◇</span>规则与品味</a>
+      <a href="#settings" data-nav="settings"><span>⚙</span>生成设置</a>
+    </nav>
+    <div class="rail-label recent-label">最近的剧</div><div id="recent-projects"></div>
+    <div class="rail-bottom"><button class="plain" id="skill-button">↗ 查看 Skill 说明</button><div class="version">LOCAL FIRST <span>v0.1.0</span></div></div>
+  </aside>
+  <div class="shell">
+    <header class="topbar"><div><span class="eyebrow">WORKSPACE</span><div id="workspace-path">尚未连接工作目录</div></div><div class="top-actions"><span class="save-status" id="save-status"></span><button class="button" id="connect-button">连接工作目录</button><button class="button dark" id="new-project">＋ 新建短剧</button></div></header>
+    <div class="sync-banner" id="sync-banner" hidden></div>
+    <main id="main" tabindex="-1"></main>
+    <footer><span id="storage-note">配置与素材留在你的设备</span><div><button class="text-button" id="refresh-button">刷新</button><button class="text-button" id="import-state">导入 JSON</button><button class="text-button" id="export-state">导出 JSON</button></div></footer>
+  </div>
+  <dialog id="dialog"><div id="dialog-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <input type="file" id="json-input" accept="application/json,.json" hidden>
+  <input type="file" id="asset-input" accept="image/*,video/*,audio/*,.pdf,.txt,.md" multiple hidden>
+  <input type="file" id="workflow-input" accept="application/json,.json" hidden>
+  <script src="bundle.js"></script>
+  <script src="workspace.snapshot.js" onerror="void 0"></script>
+  <script src="app.js"></script>
+</body>
+</html>

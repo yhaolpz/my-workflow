@@ -1,0 +1,4 @@
+interface:
+  display_name: "我的工作流"
+  short_description: "AI 短剧本地工作台：剧本、生成、剪辑与规则复用"
+  default_prompt: "使用 $my-workflow 启动我的工作流工作台，读取已有项目和配置，从当前环节继续。"

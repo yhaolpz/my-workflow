@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "revision": 0,
+  "workspaceId": "",
+  "workspaceRoot": "",
+  "updatedAt": "",
+  "config": {
+    "comfyUrl": "http://127.0.0.1:8188",
+    "tokenEnv": "",
+    "model": "MiniMax H3",
+    "maxJobsPerRun": 3,
+    "maxSecondsPerRun": 30,
+    "maxAttempts": 2,
+    "editor": "remotion",
+    "guideUrl": "https://github.com/MiniMax-AI/MiniMax-H3/blob/main/skills/h3-prompt-writing/SKILL.md"
+  },
+  "profiles": [
+    {"id":"dialogue","name":"文戏","workflowName":"","workflowPath":"","bindings":{"prompt":"","duration":"","seed":""},"referenceBindings":[],"overrides":{}},
+    {"id":"action","name":"动作","workflowName":"","workflowPath":"","bindings":{"prompt":"","duration":"","seed":""},"referenceBindings":[],"overrides":{}}
+  ],
+  "projects": [],
+  "rules": [
+    {"id":"continuity","title":"先定站位，再定镜头","category":"experience","scope":"global","projectId":"","enabled":true,"content":"同一场景的人数、身份、距离、朝向、道具和光线保持一致；正反打成对检查。"},
+    {"id":"native-av","title":"原生声画一起剪","category":"experience","scope":"global","projectId":"","enabled":true,"content":"可见人物讲话时保留同源音画时钟，检查词头词尾和嘴型；技术成功不等于视审通过。"}
+  ]
+}
