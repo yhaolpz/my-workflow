@@ -8,7 +8,7 @@ args=argparse.ArgumentParser()
 args.add_argument('--check',action='store_true')
 options=args.parse_args()
 root = Path(__file__).resolve().parents[1]
-bundle = {'version': '0.1.0', 'defaults': json.loads((root/'templates/default-state.json').read_text(encoding='utf-8')),
+bundle = {'version': (root/'VERSION').read_text(encoding='utf-8').strip(), 'defaults': json.loads((root/'templates/default-state.json').read_text(encoding='utf-8')),
           'prompts': json.loads((root/'templates/prompts.json').read_text(encoding='utf-8')),
           'handbook': [{'title': title, 'body': (root/path).read_text(encoding='utf-8')} for title,path in [
               ('Skill 说明','SKILL.md'),('安装与启动','references/quickstart.md'),

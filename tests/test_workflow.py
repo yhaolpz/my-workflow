@@ -58,7 +58,7 @@ class WorkflowTests(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):cls.server.shutdown();cls.server.server_close();cls.media_tmp.cleanup()
     def setUp(self):
-        self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name);mw.init(self.root)
+        self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name).resolve();mw.init(self.root)
         Handler.posts=0;Handler.history={};Handler.submitted=[];Handler.lose_reply=False;Handler.guide_fail=False
         self.p=mw.new_project('测试短剧','目标和冲突')
         self.p['shots']=[{'id':'S01','title':'开场','profile':'dialogue','seconds':1,'prompt':'A clear one-second shot.','referenceAssets':[],'status':'planned'}]

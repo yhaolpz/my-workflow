@@ -4,9 +4,10 @@ from pathlib import Path
 import zipfile
 
 root=Path(__file__).resolve().parents[1]
-target=root/'dist/my-workflow-v0.1.0.zip'
+version=(root/'VERSION').read_text(encoding='utf-8').strip()
+target=root/f'dist/my-workflow-v{version}.zip'
 target.parent.mkdir(exist_ok=True)
-files=[root/p for p in ('SKILL.md','README.md','LICENSE')]
+files=[root/p for p in ('SKILL.md','README.md','LICENSE','VERSION')]
 for name in ('agents','assets','references','templates','scripts','docs'):
     files.extend(p for p in (root/name).rglob('*') if p.is_file() and '__pycache__' not in p.parts and p.suffix not in ('.pyc','.pyo'))
 with zipfile.ZipFile(target,'w',zipfile.ZIP_DEFLATED) as archive:
